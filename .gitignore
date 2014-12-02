@@ -1,4 +1,6 @@
-newrelic.js
+# SysAdmin Level - Better know what you're doing
+newrelic.js # only keep out of public repos due to license key (requires manual override push to ENV/Heroku)
+
 .tmp
 .sass-cache
 
