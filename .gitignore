@@ -1,11 +1,11 @@
 # SysAdmin Level - Better know what you're doing
 
 #Uncomment to push to heroku
-#app
-#test
+app
+test
 
 #Uncomment to push to github
-dist
+#dist
 
 .tmp
 .sass-cache
