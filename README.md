@@ -1,4 +1,4 @@
-A Passion Driven Portfolio
-==========
-
-Learn more about ya boi at www.tylergoelz.com
+WriteOn.io
+ ==========
+ 
+The world's finest writing app. Start writing at http://writeon.io
