@@ -31,8 +31,8 @@ angular.module('angularApp', [
         templateUrl: 'views/design/moodboard.html'
     }).when('/404/', {
         templateUrl: 'views/404.html'
-    }).when('/signin/', {
-        redirectTo: 'http://beta.writeon.io/signin'
+    }).when('/login/', {
+        redirectTo: 'https://beta.writeon.io/login'
     }).otherwise({
         redirectTo: '404'
     });
