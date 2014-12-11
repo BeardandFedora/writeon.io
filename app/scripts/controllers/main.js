@@ -6,16 +6,18 @@
  * # MainCtrl
  * Controller of the angularApp
  */
-angular.module('angularApp').controller('MainCtrl', function($scope, $location) {
-        
-    var path = $location.path();
-    $scope.full = path === '/fG7tNpKU' ? true : false;
+angular.module('app.controllers', []).controller(
+    'MainCtrl',
     
-    $scope.awesomeThings = ['WriteOn', 'AngularJS', 'Karma'];
-});
-angular.module('angularApp').controller('NavController', function ($scope, $location) {
-    $scope.go = function (url) {
-      $location.path(url);
+    function($scope, $location, $routeParams) {
+        $scope.full = ($routeParams.fG7tNpKU) ? true : false;
+        
+}).controller(
+    'NavController',
+    
+    function($scope, $location) {
+    $scope.go = function(url) {
+        $location.path(url);
     }
-  }
-);
+    
+});

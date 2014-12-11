@@ -8,6 +8,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+// Components
+@import "writeon/buttons-inverse";
+@import "writeon/footer";
+
 // Custom CSS
 @import "writeon/theme";
 @import "writeon/global";

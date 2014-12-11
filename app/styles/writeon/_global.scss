@@ -49,19 +49,6 @@
     outline: none;
 }
 
-.btn-inverse {
-    &.btn-default {
-        @include button-inverse-variant(#fff, transparent, #fff, $gray-light);
-    }
-}
-
 .btn-love {
     @include button-variant(#CD2626, transparent, transparent);
-}
-
-//== Footer Styles
-//
-//##
-footer {
-    padding: 15px 0 30px;
 }

@@ -15,10 +15,13 @@ angular.module('angularApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    
     'ui.bootstrap',
-    'mailchimp'
+    'mailchimp',
+    
+    'app.controllers'
 
-]).config(function($routeProvider) {
+]).config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/main.html'
     }).when('/fG7tNpKU', {
@@ -36,4 +39,6 @@ angular.module('angularApp', [
     }).otherwise({
         redirectTo: '404'
     });
+    
+    $locationProvider.html5Mode(true);
 });
