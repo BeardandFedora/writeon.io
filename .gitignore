@@ -5,7 +5,7 @@
 #test
 
 #Uncomment to push to github
-#dist
+dist
 
 .tmp
 .sass-cache
