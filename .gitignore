@@ -4,10 +4,6 @@
 #app
 #test
 
-#Uncomment to push to github
-newrelic.js
-dist
->>>>>>> 4cf08f42849b65e157dc60042db6818b7b6cafc1
 
 .tmp
 .sass-cache
