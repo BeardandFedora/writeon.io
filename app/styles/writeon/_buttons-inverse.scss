@@ -9,5 +9,5 @@
 */
 
 .btn-default-inverse {
-    @include button-inverse-variant(#fff, transparent, #fff, $gray-light);
+    @include button-inverse-variant(#fff);
 }

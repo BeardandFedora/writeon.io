@@ -27,7 +27,7 @@ angular.module('angularApp', [
     function($routeProvider) {
         var routes, setRoutes;
         routes = [
-            'main', 'privacy',
+            'main', 'features', 'privacy',
             'design/theme', 'design/moodboard', '404'
         ];
     

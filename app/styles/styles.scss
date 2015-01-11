@@ -1,6 +1,5 @@
-// Core variables and mixins
+// Core variables
 @import "writeon/variables";
-@import "writeon/mixins";
 
 // Bootstrap
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
@@ -8,9 +7,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+// Core Mixins
+@import "writeon/mixins";
+
 // Components
+@import "writeon/backgrounds";
 @import "writeon/buttons-inverse";
 @import "writeon/footer";
+@import "writeon/padding";
 
 // Custom CSS
 @import "writeon/theme";
