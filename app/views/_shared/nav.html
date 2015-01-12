@@ -6,12 +6,13 @@
                 <img ng-if="main" class="img-responsive" src="images/logo_alt.png" alt="Writeon">
             </a>
         </div>
-        <div class="hidden-xs hide">
-            <ul class="nav navbar-nav navbar-right" data-ng-controller="NavController as logincontroller">
-                <li>
-                    <button class="btn btn-default-inverse navbar-btn" title="Login" data-ng-click="logincontroller.go('/login/')">Login</button>
-                </li>
-            </ul>
-        </div>
+        <ul class="nav navbar-nav navbar-right hidden-xs" data-ng-controller="NavController as logincontroller">
+            <li>
+                <a data-ng-href="#/features">Features</a>
+            </li>
+            <li class="hide">
+                <button class="btn btn-default-inverse navbar-btn" title="Login" data-ng-click="logincontroller.go('/login/')">Login</button>
+            </li>
+        </ul>
     </div>
 </nav>

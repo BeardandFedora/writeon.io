@@ -11,7 +11,7 @@ angular.module('app.controllers', [
 ]).controller('WriteOnCtrl', function($scope, $location) {
     
     function isMain() {
-        return ($location.path() === '/main') ? true : false;
+        return ($location.path() === '/main' || '/features') ? true : false;
     }
     
     $scope.main = isMain();
