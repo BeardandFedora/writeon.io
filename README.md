@@ -16,4 +16,3 @@ Writing and Publishing is just the tip of the iceberg. WriteOn also has features
 
 
 The world's finest writing app. Start writing at www.writeon.io
->>>>>>> 11fd0eee7b0dc36d2568e0149b2e4b671cda9e00
