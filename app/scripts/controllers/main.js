@@ -13,11 +13,19 @@ angular.module('app.controllers', [
     function isMain() {
         return ($location.path() === '/main') || ($location.path() === '/features') ? true : false;
     }
+    function isInverse() {
+        return ($location.path() === '/privacy') ? true : false;
+    }
     
     $scope.main = isMain();
+    $scope.inverse = isInverse();
     
     $scope.$on('$locationChangeStart', function() {
         $scope.main = isMain();
+        $scope.inverse = isInverse();
+    });
+    $scope.$on('$routeChangeSuccess', function () {
+      window.scrollTo(0, 0);
     });
     
 }).controller('MainCtrl', function($scope, $location, $routeParams) {

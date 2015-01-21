@@ -25,7 +25,7 @@ mark, .mark {
 .bigger {font-size: 1.4em;}
 
 //== From the main writeon app theme (base+main)
-.nav > li > a:hover, .nav > li > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, , .nav > li > a:active {
     text-decoration: underline;
 }
 .navbar > .container > ul.secondary {
@@ -113,4 +113,4 @@ box-shadow: 0 3px 9px rgba(0,0,0,0.5);
 background-clip: padding-box;
 outline: none;
 }
-
+.serif {font-family: $font-family-serif;}

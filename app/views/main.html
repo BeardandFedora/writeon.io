@@ -18,6 +18,7 @@
                                 <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary btn-block" type="button">Get Started</button>
                             </div>
                             <div class="input-group input-group-lg hidden-xs">
+                                <span class="input-group-addon" id="basic-addon1">@</span>
                                 <input type="email" name="email" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
                                 <span class="input-group-btn">
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary" type="button">Get Started</button>
@@ -54,7 +55,7 @@
                     <p>Jack Kerouac typed <em>On the Road</em> on a single roll of paper so he would not be interrupted. 
                         Ernest Hemingway wrote standing up. J.R.R. Tolkien liked to write from his attic and even stated in his foreword to <em>Lord of the Rings</em> that “the cost of professional typing by the ten-fingered was beyond [his] means.”
                     </p>
-                    <p class="lead"><i>"This baby speaks electric Shakespeare at the slightest provocation and will rap out a page and a half if you just look at it hard." Tom Robbins</i></p>
+                    <p class="lead serif"><i>"This baby speaks electric Shakespeare at the slightest provocation and will rap out a page and a half if you just look at it hard." Tom Robbins</i></p>
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
                         <small class="text-muted">It's all you have to do.</small>
                     </h1>
                     <br />
-                    <img class="img-responsive center-block modal-content" src="/images/main/writeon-593329_1920.jpg" />
+                    <img class="img-responsive center-block modal-content" src="/images/main/writeon-sketch.png" />
                     
                 </div>
             </div>
@@ -108,7 +109,7 @@
                 <div class="col-sm-10 col-sm-offset-1">
                     <p class="lead">Writing and Publishing is just the tip of the iceberg. WriteOn also has features like collaboration, commenting, and writing offline.</p>
                     <br />
-                    <a class="btn btn-lg" type="button" href="/features">
+                    <a class="btn btn-lg" type="button" href="#/features">
                         <span class="glyphicon glyphicon-align-left hidden-xs" aria-hidden="true"></span> See <span class="hidden-xs">all</span> WriteOn features
                     </a>
                 </div>
@@ -137,6 +138,7 @@
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary btn-block" type="button">Get Started</button>
                                 </div>
                                 <div class="input-group input-group-lg hidden-xs">
+                                    <span class="input-group-addon" id="basic-addon1">@</span>
                                     <input type="email" name="email" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
                                     <span class="input-group-btn">
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary" type="button">Get Started</button>
@@ -152,7 +154,7 @@
                         </div>
 
                         <small>
-                            <em>WriteOn is open source and open culture, and currently in βeta.</em>
+                            <em>WriteOn is open source and open culture, and currently in <a data-ng-href="#/beta">βeta</a>.</em>
                         </small>
 
                         <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->

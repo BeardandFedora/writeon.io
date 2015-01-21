@@ -17,7 +17,7 @@
                         <small class="text-muted">It's all you have to do.</small>
                     </h1>
                     <br />
-                    <img class="img-responsive center-block modal-content" src="/images/main/writeon-593329_1920.jpg" />
+                    <img class="img-responsive center-block modal-content" src="/images/main/writeon-justwrite.jpg" />
                     
                 </div>
             </div>
@@ -80,12 +80,12 @@
                     <p class="text-justify">Want to collaborate on the same document with co-authors? No problem. WriteOn takes care of merging modifications and allows you to leave inline comments and discussions directly in your stories.</p>
                 </div>
                 <div class="col-md-5">
-                    <img class="img-responsive center-block" src="/images/main/comments.png" />
+                    <img class="img-responsive center-block padding-vertical-md" src="/images/main/comments.png" />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
-                    <img class="img-responsive center-block modal-content" src="/images/main/toc.gif" />
+                    <img class="img-responsive center-block modal-content padding-vertical-md" src="/images/main/toc.gif" />
                 </div>
                 <div class="col-md-5">
                     <h2 id="review-comments">In-line writing syntax.</h2>
@@ -107,7 +107,8 @@
                     <br>
                     <img class="img-responsive center-block modal-content" src="/images/main/download.png" />
                     <img class="img-responsive center-block modal-content" src="/images/main/paper-share.png" />
-                    <blockquote><i class="glyphicon glyphicon-text-color"></i> If you've been looking for a return to simplicity in your writing life, WriteOn is the tool you've been waiting for.</blockquote>
+                    <div class="row padding-vertical-md"><hr></div>
+                    <blockquote class="serif"><i class="glyphicon glyphicon-heart-empty text-red"></i> If you've been looking for a return to simplicity in your writing life, WriteOn is the tool you've been waiting for.</blockquote>
                 </div>
                 </div>
             </div>
@@ -133,6 +134,7 @@
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary btn-block" type="button">Get Started</button>
                                 </div>
                                 <div class="input-group input-group-lg hidden-xs">
+                                    <span class="input-group-addon" id="basic-addon1">@</span>
                                     <input type="email" name="email" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
                                     <span class="input-group-btn">
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary" type="button">Get Started</button>
@@ -148,7 +150,7 @@
                         </div>
 
                         <small>
-                            <em>Get started, write away... it's free.</em>
+                            <em>WriteOn is open source and open culture, and currently in <a data-ng-href="#/beta">βeta</a>.</em>
                         </small>
 
                         <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->

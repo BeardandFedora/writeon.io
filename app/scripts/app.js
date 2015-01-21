@@ -23,7 +23,7 @@ angular.module('angularApp', [
     
     function($routeProvider, $locationProvider) {
         var routes, setRoutes;
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
         routes = [
             'main', 'features', 'privacy', 'beta', 'press', 
             'design/theme', 'design/moodboard', '404'
