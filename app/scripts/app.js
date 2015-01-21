@@ -15,19 +15,17 @@ angular.module('angularApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    
     'ui.bootstrap',
     'mailchimp',
-    
     'app.controllers'
 
-]).config([
-    '$routeProvider',
+]).config(['$routeProvider', '$locationProvider', 
     
-    function($routeProvider) {
+    function($routeProvider, $locationProvider) {
         var routes, setRoutes;
+        $locationProvider.html5Mode(true);
         routes = [
-            'main', 'features', 'privacy',
+            'main', 'features', 'privacy', 'beta', 'press', 
             'design/theme', 'design/moodboard', '404'
         ];
     
@@ -50,6 +48,8 @@ angular.module('angularApp', [
         .when('/', {
             redirectTo: '/main'
         }).when('/fG7tNpKU', {
+            redirectTo: '/main'
+        }).when('/home', {
             redirectTo: '/main'
         }).when('/404', {
             templateUrl: '404.html'

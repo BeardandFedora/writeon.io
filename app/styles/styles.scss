@@ -17,8 +17,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "writeon/padding";
 
 // Custom CSS
+@import "writeon/fonts";
 @import "writeon/theme";
 @import "writeon/global";
 @import "writeon/moodboard";
 @import "writeon/main";
 @import "writeon/features";
+@import "writeon/beta";

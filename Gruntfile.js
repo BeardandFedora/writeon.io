@@ -12,6 +12,27 @@ module.exports = function(grunt) {
         app: require('./bower.json').appPath || 'app',
         dist: 'dist'
     };
+    //this is a new html5 rewrite rule so we can use normalized URLs, instead hashmaps (ie - /main instead of /#/main)
+    var _sendIndex = function(req, res)
+                        {
+                            var fs = require('fs');
+
+                            fs.readFile('./app/index.html', function(error, info)
+                            {
+                                res.setHeader('Content-Type', 'text/html');
+                                res.end(info);
+                            });
+                        };
+    // set some fallback for rewrite issues
+    var _on404 = [];
+    _on404.push(['/main', _sendIndex]);
+    _on404.push(['/beta', _sendIndex]);
+    _on404.push(['/press', _sendIndex]);
+    _on404.push(['/features', _sendIndex]);
+    _on404.push(['fG7tNpKU', _sendIndex]);
+    //_on404.push(['/xyz/', _sendIndex]); // trailing slash will map to an id
+    
+    
     // Define the configuration for all the tasks
     grunt.initConfig({
         // Project settings
@@ -55,15 +76,28 @@ module.exports = function(grunt) {
                 port: 3000,
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: '0.0.0.0',
-                livereload: 4000
+                livereload: 4000,
+                // Modrewrite rule, connect.static(path) for each path in target's base
+                middleware: function (connect, options) {
+                    var optBase = (typeof options.base === 'string') ? [options.base] : options.base;
+                    return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(
+                    optBase.map(function(path){ return connect.static(path); }));
+                }
             },
             livereload: {
                 options: {
                     open: true,
-                    middleware: function(connect) {
-                        return [connect.static('.tmp'), connect().use('/bower_components', connect.static('./bower_components')), connect.static(appConfig.app)];
+                    middleware: function (connect) {
+                        return [
+                            require('connect-modrewrite') (['!(\\..+)$ / [L]']),
+                            connect.static('.tmp'),
+                            connect().use('/bower_components',connect.static('./bower_components')),
+                            connect().use('/fonts', connect.static('./bower_components/bootstrap/dist/fonts')),
+                            connect().use('/fonts', connect.static('./bower_components/font-awesome/fonts')),
+                            connect.static(appConfig.app)
+                        ];
                     }
-                }
+                } 
             },
             test: {
                 options: {
@@ -109,7 +143,8 @@ module.exports = function(grunt) {
         // Add vendor prefixed styles
         autoprefixer: {
             options: {
-                browsers: ['last 1 version']
+                browsers: ['last 1 version'],
+                map: true
             },
             dist: {
                 files: [{
@@ -146,7 +181,8 @@ module.exports = function(grunt) {
                 httpFontsPath: '/styles/fonts',
                 relativeAssets: false,
                 assetCacheBuster: false,
-                raw: 'Sass::Script::Number.precision = 10\n'
+                raw: 'Sass::Script::Number.precision = 10\n',
+                sourcemap: true
             },
             dist: {
                 options: {
