@@ -363,4 +363,8 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['clean:server', 'concurrent:test', 'autoprefixer', 'connect:test', 'karma']);
     grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngAnnotate', 'copy:dist', 'cdnify', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
     grunt.registerTask('default', ['newer:jshint', 'test', 'build']);
+    grunt.registerTask('heroku', function (target) {
+        // use the target to do whatever, for example:
+        grunt.task.run('build:' + target);
+    });
 };
