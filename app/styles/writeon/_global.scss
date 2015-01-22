@@ -35,13 +35,14 @@ body {
 //##
 
 .navbar-default {
-    @include gradient-vertical(rgba(255,255,255,.3), rgba(255,255,255,.2), 0, 100%);
+    @include gradient-vertical(rgba(255,255,255,1), rgba(255,255,255,.9), 0, 100%);
     @include box-shadow(0 1px 5px rgba(0,0,0,.075));
     border-color: transparent;
 }
 .navbar-right {
     margin-right: 0;
 }
+.navbar-nav > li > .dropdown-menu {margin-top:2px;}
 
 //== Jumbotron Bootstrap Overwrites
 //

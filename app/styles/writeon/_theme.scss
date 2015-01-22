@@ -56,7 +56,7 @@ mark, .mark {
     padding-top: 7px;
 }
 hr {
-    border-top: 1px solid rgba(128,128,128,0.1);padding: 20px;
+    border-top: 1px solid rgba(128,128,128,0.1);padding: 20px 0;
 }
 .underline {
     border-bottom: 1px dotted;
@@ -97,7 +97,22 @@ del {
     background-repeat: no-repeat;
     background-position: 90% 30%;
 }
-.bg-primary.whiteplane, .bg-primary.lightplane {
+.paper {
+    background-image: url('/images/main/paper.png');
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+}
+.lightpaper {
+    background-image: url('/images/main/paper-light.png');
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+}
+.whitepaper {
+    background-image: url('/images/main/paper-white.png');
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+}
+.bg-primary.whiteplane, .bg-primary.lightplane, .bg-primary.whitepaper, .bg-primary.lightpaper {
     color: #111;
 }
 .bg-secondary {

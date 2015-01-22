@@ -19,6 +19,7 @@ angular.module('app.controllers', [
     
     $scope.main = isMain();
     $scope.inverse = isInverse();
+    $scope.isCollapsed = true;
     
     $scope.$on('$locationChangeStart', function() {
         $scope.main = isMain();
