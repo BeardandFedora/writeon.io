@@ -1,6 +1,6 @@
 {
     "name": "Writeon.io",
-    "version": "0.8.2",
+    "version": "0.8.7",
     "dependencies": {
         "angular": "^1.3.0",
         "angular-bootstrap": "~0.11.2",
@@ -14,7 +14,7 @@
         "angular-route": "^1.3.0",
         "angular-sanitize": "^1.3.0",
         "angular-touch": "^1.3.0",
-        "angular-mailchimp": "*",
+        "angular-mailchimp": "https://github.com/BeardandFedora/angular-mailchimp.git",
         "ngFitText": "https://github.com/BeardandFedora/ng-FitText.js.git#^3.1.2"
     },
     "devDependencies": {

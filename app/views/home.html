@@ -38,8 +38,8 @@
                     </small>
 
                     <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
-                    <div ng-show="mailchimp.result === 'error'" class="alert alert-info alert-dismissible" role="alert" ng-cloak>
-                        <strong>Aw, shucks. You're so sweet!</strong>
+                    <div ng-show="mailchimp.result === 'error'" class="alert alert-danger alert-dismissible" role="alert" ng-cloak>
+                        <strong>Aw, shucks. There was a small issue:</strong>
                         <br />
                         <span ng-bind-html="mailchimp.errorMessage"></span>
                     </div>
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="input-group input-group-lg hidden-xs">
                                     <span class="input-group-addon" id="basic-addon1">@</span>
-                                    <input type="email" name="email" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
+                                    <input type="email" name="EMAIL" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
                                     <span class="input-group-btn">
                                     <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary" type="button">Get Started</button>
                                 </span>
@@ -158,8 +158,8 @@
                         </small>
 
                         <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
-                        <div ng-show="mailchimp.result === 'error'" class="alert alert-info alert-dismissible" role="alert" ng-cloak>
-                            <strong>Aw, shucks. You're so sweet!</strong>
+                        <div ng-show="mailchimp.result === 'error'" class="alert alert-danger alert-dismissible" role="alert" ng-cloak>
+                            <strong>Aw, shucks. There was a small issue:</strong>
                             <br />
                             <span ng-bind-html="mailchimp.errorMessage"></span>
                         </div>

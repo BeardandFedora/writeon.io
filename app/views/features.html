@@ -171,8 +171,8 @@
                         </small>
 
                         <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
-                        <div ng-show="mailchimp.result === 'error'" class="alert alert-info alert-dismissible" role="alert" ng-cloak>
-                            <strong>Aw, shucks. You're so sweet!</strong>
+                        <div ng-show="mailchimp.result === 'error'" class="alert alert-warning alert-dismissible" role="alert" ng-cloak>
+                            <strong>Aw, shucks. There was a small issue:</strong>
                             <br />
                             <span ng-bind-html="mailchimp.errorMessage"></span>
                         </div>
