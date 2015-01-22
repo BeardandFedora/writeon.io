@@ -23,9 +23,9 @@ angular.module('angularApp', [
     
     function($routeProvider, $locationProvider) {
         var routes, setRoutes;
-        $locationProvider.html5Mode(false);
+        $locationProvider.html5Mode(true);
         routes = [
-            'main', 'features', 'privacy', 'beta', 'press', 
+            'home', 'main', 'features', 'privacy', 'beta', 'press', 
             'design/theme', 'design/moodboard', '404'
         ];
     
@@ -46,13 +46,11 @@ angular.module('angularApp', [
     
         return $routeProvider
         .when('/', {
-            redirectTo: '/main'
+            redirectTo: '/home'
         }).when('/fG7tNpKU', {
-            redirectTo: '/main'
-        }).when('/home', {
-            redirectTo: '/main'
-        }).when('/404', {
-            templateUrl: '404.html'
+            redirectTo: '/home'
+        }).when('/main', {
+            redirectTo: '/home'
         }).when('/login/', {
             redirectTo: 'https://beta.writeon.io/login'
         }).otherwise({

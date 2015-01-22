@@ -44,6 +44,10 @@ body {
 }
 .navbar-nav > li > .dropdown-menu {margin-top:2px;}
 
+.dropdown-menu > li > a {
+    font-weight: 300;
+    font-size: 1.2em;
+}
 //== Jumbotron Bootstrap Overwrites
 //
 //##

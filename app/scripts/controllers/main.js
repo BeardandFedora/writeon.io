@@ -11,7 +11,7 @@ angular.module('app.controllers', [
 ]).controller('WriteOnCtrl', function($scope, $location) {
     
     function isMain() {
-        return ($location.path() === '/main') || ($location.path() === '/features') ? true : false;
+        return ($location.path() === '/home') || ($location.path() === '/features') ? true : false;
     }
     function isInverse() {
         return ($location.path() === '/privacy') ? true : false;
