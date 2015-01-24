@@ -80,7 +80,7 @@ mark {
 		background-image: none;
 	}
 	&.disabled {
-		background-color: #92C9E4;
+		background-color: $btn-link-disabled-bg;
 		border-color: $color_seagull_approx;
 		&:hover {
 			background-color: #92C9E4;
@@ -109,7 +109,7 @@ mark {
 	}
 }
 .btn-primary[disabled] {
-	background-color: #92C9E4;
+	background-color: $btn-link-disabled-bg;
 	border-color: $color_seagull_approx;
 	&:hover {
 		background-color: #92C9E4;

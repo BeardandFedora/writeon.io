@@ -61,6 +61,10 @@ hr {
 .underline {
     border-bottom: 1px dotted;
 }
+.highlight {
+    text-shadow: 1px 1px 6px #92C9E4;
+    -webkit-filter: blur(0.7px);
+}
 blockquote {
     border-left-width: 10px;
     background-color: rgba(128,128,128,0.05);
