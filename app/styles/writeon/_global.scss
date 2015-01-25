@@ -70,3 +70,18 @@ body {
 .btn-love {
     @include button-variant(#CD2626, transparent, transparent);
 }
+
+.errorMessage {
+    position: relative;
+    
+    .alert {
+        text-shadow: none;
+        margin-top: 15px;
+        position: absolute;
+        width: 100%;
+        
+        a {
+            color: inherit;
+        }
+    }
+}

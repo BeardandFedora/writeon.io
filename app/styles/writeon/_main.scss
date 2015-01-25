@@ -14,8 +14,8 @@
         @extend .jumbotron;
         background: center center no-repeat url("/images/main/hero_1.png");
         background-size: cover;
-        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         text-align: center;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         
         h1 {
             text-transform: capitalize;
@@ -37,27 +37,12 @@
             @include gradient-vertical(rgba(0,0,0,.4), rgba(0,0,0,.3), 0%, 100%);
             border-color: transparent;
             background-color: transparent;
+            text-shadow: none;
             
             .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
                 @include opacity(1);
             }
             
-        }
-        
-        .alert {
-            text-shadow: none;
-            margin-top: 15px;
-            position: relative;
-            
-            a {
-                color: inherit;
-            }
-            
-            @media (min-width: $screen-sm-min) { 
-                position: absolute;
-                width: 100%;
-            }
-        }
-        
+        } 
     }
 }

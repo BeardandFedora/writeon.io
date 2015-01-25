@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <input type="email" name="email" ng-model="mailchimp.email" class="form-control" placeholder="email@example.com" required>
                 </div>
-                <button ng-disabled="MailchimpSubscriptionForm.$invalid" ng-click="addSubscription(mailchimp)" class="btn btn-primary btn-block" type="button">Get Started</button>
+                <button ng-click="addSubscription(mailchimp)" class="btn btn-primary btn-block" type="button">Get Started</button>
             </div>
             <div class="input-group input-group-lg hidden-xs">
                 <span class="input-group-addon" id="basic-addon1">@</span>
@@ -32,7 +32,7 @@
     </small>
 
     <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
-    <div ng-show="mailchimp.result === 'error'" ng-cloak>
+    <div ng-show="mailchimp.result === 'error'" class="errorMessage" ng-cloak>
         <alert type="danger" close="closeAlert(mailchimp)" role="alert">
             <strong>Aw, shucks. There was a small issue:</strong>
             <br />
