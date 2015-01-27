@@ -15,6 +15,8 @@ app.use(function(req, res, next) {
         return next();
     }
 });
+/* a badass prerender engine for Angular apps - prerender.io style */
+app.use(require('prerender-node').set('prerenderToken', 'Rkc1v2erHMhjziNu5gbC'));
 
 /* a badass express based router middleware (rewrites) for html5Mode angular apps - fedora style */
 app.use(serveStatic(__dirname + '/dist'));
