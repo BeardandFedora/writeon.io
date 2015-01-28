@@ -1,6 +1,6 @@
 {
   "name": "Writeon.io",
-  "version": "0.8.7",
+  "version": "0.9.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:BeardandFedora/writeon.io.git"
@@ -11,7 +11,8 @@
     "express": "~4.10.2",
     "newrelic": "~1.13.4",
     "nodetime": "~0.8.15",
-    "serve-static": "~1.8.1"
+    "serve-static": "~1.8.1",
+    "prerender-node": "~1.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.1",

@@ -48,8 +48,8 @@ module.exports = function(grunt) {
             jsTest: {
                 files: ['test/spec/{,*/}*.js'],
                 //No Karma until it's needed
-                //tasks: ['newer:jshint:test', 'karma']
-                tasks: ['newer:jshint:test']
+                tasks: ['newer:jshint:test', 'karma']
+                //tasks: ['newer:jshint:test']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -304,7 +304,7 @@ module.exports = function(grunt) {
                     dot: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
-                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'views/{,*/}*.html', 'images/{,*/}*.{webp}', 'styles/fonts/{,*/}*.*']
+                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'sitemap.xml', 'views/{,*/}*.html', 'images/{,*/}*.{webp}', 'styles/fonts/{,*/}*.*']
                 }, {
                     expand: true,
                     cwd: '.tmp/images',
@@ -329,15 +329,15 @@ module.exports = function(grunt) {
             server: ['compass:server'],
             test: ['compass'],
             dist: ['compass:dist', 'imagemin', 'svgmin']
-        }
+        },
         //Comment out Karma until it's actually in use.
         // Test settings
-        //     karma: {
-        //       unit: {
-        //         configFile: 'test/karma.conf.js',
-        //         singleRun: true
-        //       }
-        //     }
+             karma: {
+               unit: {
+                 configFile: 'test/karma.conf.js',
+                 singleRun: true
+               }
+             }
     });
     grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
         if(target === 'dist') {
