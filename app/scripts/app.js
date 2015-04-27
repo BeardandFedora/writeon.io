@@ -26,6 +26,7 @@ angular.module('angularApp', [
         $locationProvider.html5Mode(true);
         routes = [
             'home', 'main', 'features', 'privacy', 'beta', 'press', 
+            'beta/thank-you',
             'design/theme', 'design/moodboard', '404'
         ];
     
