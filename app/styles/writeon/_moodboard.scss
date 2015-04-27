@@ -23,22 +23,28 @@ $color_burnt_sienna_approx: #e26d50;
 $color_alto_approx: #ddd;
 $color_fuscous_gray_approx: #545454;
 $color_celeste_approx: #ccc;
+$color_green_sea: #16a085;
+$color_turqoise: #1abc9c;
+$color_asphalt: #34495e;
+$color_peter_river: #3498db;
+$color_wisteria: #8e44ad;
+$color_concrete: #95a5a6;
 
 //@extend-elements
 //original selectors
 //.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary
 %extend_1 {
 	color: $white;
-	background-color: $color_viking_approx;
-	border-color: $color_shakespeare_approx;
+	background-color: $color_green_sea;
+	border-color: $color_turqoise;
 }
 
 //original selectors
 //.btn-secondary:hover, .btn-secondary:focus, .btn-secondary.focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary
 %extend_2 {
 	color: $white;
-	background-color: $color_copperfield_approx;
-	border-color: $color_burnt_sienna_approx;
+	background-color: $color_asphalt;
+	border-color: $color_wisteria;
 }
 
 
@@ -60,8 +66,8 @@ mark {
 }
 .btn-primary {
 	color: $white;
-	background-color: #92C9E4;
-	border-color: $color_seagull_approx;
+	background-color: $color_turqoise;
+	border-color: $color_green_sea;
 	&:hover {
 		@extend %extend_1;
 	}
@@ -81,111 +87,111 @@ mark {
 	}
 	&.disabled {
 		background-color: $btn-link-disabled-bg;
-		border-color: $color_seagull_approx;
+		border-color: $color_green_sea;
 		&:hover {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_green_sea;
 		}
 		&:focus {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_green_sea;
 		}
 		&.focus {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_green_sea;
 		}
 		&:active {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_green_sea;
 		}
 		&.active {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_green_sea;
 		}
 	}
 	.badge {
-		color: #92C9E4;
+		color: $color_turqoise;
 		background-color: $white;
 	}
 }
 .btn-primary[disabled] {
 	background-color: $btn-link-disabled-bg;
-	border-color: $color_seagull_approx;
+	border-color: $color_turqoise;
 	&:hover {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 	}
 	&:focus {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 	}
 	&.focus {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 	}
 	&:active {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 	}
 	&.active {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 	}
 }
 fieldset[disabled] {
 	.btn-primary {
-		background-color: #92C9E4;
-		border-color: $color_seagull_approx;
+		background-color: $color_concrete;
+		border-color: $color_turqoise;
 		&:hover {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_turqoise;
 		}
 		&:focus {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_turqoise;
 		}
 		&.focus {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_turqoise;
 		}
 		&:active {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_turqoise;
 		}
 		&.active {
-			background-color: #92C9E4;
-			border-color: $color_seagull_approx;
+			background-color: $color_concrete;
+			border-color: $color_turqoise;
 		}
 	}
 	.btn-secondary {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 		&:hover {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&:focus {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&.focus {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&:active {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&.active {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 	}
 }
 .btn-secondary {
 	color: $white;
-	background-color: #EEAA99;
-	border-color: $color_apricot_approx;
+	background-color: $color_asphalt;
+	border-color: $color_wisteria;
 	&:hover {
 		@extend %extend_2;
 	}
@@ -204,56 +210,56 @@ fieldset[disabled] {
 		background-image: none;
 	}
 	&.disabled {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 		&:hover {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&:focus {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&.focus {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&:active {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 		&.active {
-			background-color: #EEAA99;
-			border-color: $color_apricot_approx;
+			background-color: $color_asphalt;
+			border-color: $color_wisteria;
 		}
 	}
 	.badge {
-		color: #EEAA99;
+		color: $color_wisteria;
 		background-color: $white;
 	}
 }
 .btn-secondary[disabled] {
-	background-color: #EEAA99;
-	border-color: $color_apricot_approx;
+	background-color: $color_asphalt;
+	border-color: $color_wisteria;
 	&:hover {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 	}
 	&:focus {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 	}
 	&.focus {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 	}
 	&:active {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 	}
 	&.active {
-		background-color: #EEAA99;
-		border-color: $color_apricot_approx;
+		background-color: $color_asphalt;
+		border-color: $color_wisteria;
 	}
 }
 .border-left-gray {
