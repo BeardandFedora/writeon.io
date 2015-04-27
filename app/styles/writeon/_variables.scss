@@ -14,11 +14,13 @@ $gray:                   lighten($gray-base, 33.5%); // #555
 $gray-light:             lighten($gray-base, 46.7%); // #777
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-primary:         #92C9E4;
-$brand-success:         #a3d7a3;
-$brand-info:            #b0e1ef;
-$brand-warning:         #f8d9ac;
-$brand-danger:          #eba5a3;
+$brand-primary:         #16a085;
+$brand-secondary:       #34495e;
+$brand-tirtuary:        #1abc9c;
+$brand-success:         #27ae60;
+$brand-info:            #2980b9;
+$brand-warning:         #d35400;
+$brand-danger:          #c0392b;
 
 
 //== Scaffolding
@@ -182,7 +184,7 @@ $input-border-radius-large:      $border-radius-large;
 $input-border-radius-small:      $border-radius-small;
 
 //** Border color for inputs on focus
-$input-border-focus:             #66afe9;
+$input-border-focus:             $brand-primary;
 
 //** Placeholder text color
 $input-color-placeholder:        #999;
@@ -347,7 +349,7 @@ $navbar-default-bg:                transparent;
 $navbar-default-border:            darken(#f8f8f8, 6.5%);
 
 // Navbar links
-$navbar-default-link-color:                #545454;
+$navbar-default-link-color:                $brand-secondary;
 $navbar-default-link-hover-color:          $brand-primary;
 $navbar-default-link-hover-bg:             transparent;
 $navbar-default-link-active-color:         $brand-primary;

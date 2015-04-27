@@ -15,7 +15,8 @@
         
     .jumbotron {
         @extend .jumbotron;
-        background: center center no-repeat url("/images/main/hero_2.png");
+        /* background: center center no-repeat url("/images/main/hero_2.png"); */
+		background-color: $color_asphalt;
         background-size: cover;
         text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         text-align: center;
