@@ -24,7 +24,6 @@ angular.module('app.controllers', []).controller('WriteOnCtrl', function($scope,
     $scope.$on('$routeChangeSuccess', function() {
         window.scrollTo(0, 0);
     });
-    
 }).controller('MainCtrl', function($scope, $location, $routeParams) {
     $scope.full = ($routeParams.fG7tNpKU) ? true : false;
     
