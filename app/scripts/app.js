@@ -17,11 +17,13 @@ angular.module('angularApp', [
     'ngTouch',
     'ui.bootstrap',
     'mailchimp',
+	'angulartics',
+	'angulartics.google.tagmanager',
     'app.controllers'
 
-]).config(['$routeProvider', '$locationProvider', 
+]).config(['$routeProvider', '$locationProvider', '$analyticsProvider', 
     
-    function($routeProvider, $locationProvider) {
+    function($routeProvider, $locationProvider, $analyticsProvider) {
         var routes, setRoutes;
         $locationProvider.html5Mode(true);
         routes = [
@@ -47,7 +49,7 @@ angular.module('angularApp', [
     
         return $routeProvider
         .when('/', {
-            redirectTo: '/home'
+            templateUrl: 'views/home.html'
         }).when('/fG7tNpKU', {
             redirectTo: '/home'
         }).when('/main', {
@@ -57,5 +59,9 @@ angular.module('angularApp', [
         }).otherwise({
             redirectTo: '/404'
         });
+		
+		// Angulartics full path tracking
+		$analyticsProvider.firstPageview(true); /* Records pages that don't use $state or $route */
+        $analyticsProvider.withBase(true);  /* Records full path */
     }
 ]);
