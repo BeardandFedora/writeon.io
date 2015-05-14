@@ -8,21 +8,19 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
+    grunt.loadNpmTasks('grunt-bump');
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
         dist: 'dist'
     };
     //this is a new html5 rewrite rule so we can use normalized URLs, instead hashmaps (ie - /main instead of /#/main)
-    var _sendIndex = function(req, res)
-                        {
-                            var fs = require('fs');
-
-                            fs.readFile('./app/index.html', function(error, info)
-                            {
-                                res.setHeader('Content-Type', 'text/html');
-                                res.end(info);
-                            });
-                        };
+    var _sendIndex = function(req, res) {
+        var fs = require('fs');
+        fs.readFile('./app/index.html', function(error, info) {
+            res.setHeader('Content-Type', 'text/html');
+            res.end(info);
+        });
+    };
     // set some fallback for rewrite issues
     var _on404 = [];
     _on404.push(['/main', _sendIndex]);
@@ -31,10 +29,24 @@ module.exports = function(grunt) {
     _on404.push(['/features', _sendIndex]);
     _on404.push(['fG7tNpKU', _sendIndex]);
     //_on404.push(['/xyz/', _sendIndex]); // trailing slash will map to an id
-    
-    
     // Define the configuration for all the tasks
     grunt.initConfig({
+        bump: {
+            options: {
+                files: ['package.json', 'bower.json'],
+                updateConfigs: [],
+                commit: true,
+                commitMessage: 'Release v%VERSION%',
+                commitFiles: ['package.json'],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version %VERSION%',
+                push: true,
+                pushTo: 'github',
+                gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+                globalReplace: false
+            }
+        },
         // Project settings
         yeoman: appConfig,
         // Watches files for changes and runs tasks based on the changed files
@@ -78,26 +90,20 @@ module.exports = function(grunt) {
                 hostname: '0.0.0.0',
                 livereload: 4000,
                 // Modrewrite rule, connect.static(path) for each path in target's base
-                middleware: function (connect, options) {
+                middleware: function(connect, options) {
                     var optBase = (typeof options.base === 'string') ? [options.base] : options.base;
-                    return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(
-                    optBase.map(function(path){ return connect.static(path); }));
+                    return [require('connect-modrewrite')(['!(\\..+)$ / [L]'])].concat(optBase.map(function(path) {
+                        return connect.static(path);
+                    }));
                 }
             },
             livereload: {
                 options: {
                     open: true,
-                    middleware: function (connect) {
-                        return [
-                            require('connect-modrewrite') (['!(\\..+)$ / [L]']),
-                            connect.static('.tmp'),
-                            connect().use('/bower_components',connect.static('./bower_components')),
-                            connect().use('/fonts', connect.static('./bower_components/bootstrap/dist/fonts')),
-                            connect().use('/fonts', connect.static('./bower_components/font-awesome/fonts')),
-                            connect.static(appConfig.app)
-                        ];
+                    middleware: function(connect) {
+                        return [require('connect-modrewrite')(['!(\\..+)$ / [L]']), connect.static('.tmp'), connect().use('/bower_components', connect.static('./bower_components')), connect().use('/fonts', connect.static('./bower_components/bootstrap/dist/fonts')), connect().use('/fonts', connect.static('./bower_components/font-awesome/fonts')), connect.static(appConfig.app)];
                     }
-                } 
+                }
             },
             test: {
                 options: {
@@ -198,11 +204,7 @@ module.exports = function(grunt) {
         // Renames files for browser caching purposes
         filerev: {
             dist: {
-                src: ['<%= yeoman.dist %>/scripts/{,*/}*.js',
-                      '<%= yeoman.dist %>/{,*/}*.js',
-                      '<%= yeoman.dist %>/styles/{,*/}*.css',
-                      '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
-                      '<%= yeoman.dist %>/styles/fonts/*']
+                src: ['<%= yeoman.dist %>/scripts/{,*/}*.js', '<%= yeoman.dist %>/{,*/}*.js', '<%= yeoman.dist %>/styles/{,*/}*.css', '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}', '<%= yeoman.dist %>/styles/fonts/*']
             }
         },
         // Reads HTML for usemin blocks to enable smart builds that automatically
@@ -225,7 +227,7 @@ module.exports = function(grunt) {
         },
         // Performs rewrites based on filerev and the useminPrepare configuration
         usemin: {
-            html: ['<%= yeoman.dist %>/**/*.html', '<%= yeoman.dist %>/views/{,*/}*.html'],
+            html: ['<%= yeoman.dist %>/**/*.html', '<%= yeoman.dist %>/views/{,*/}*.html', '<%= yeoman.dist %>/variants/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/**/*.css'],
             options: {
                 assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images/']
@@ -319,7 +321,7 @@ module.exports = function(grunt) {
                     dot: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
-                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'sitemap.xml', 'views/{,*/}*.html', 'images/{,*/}*.{webp}', 'styles/fonts/{,*/}*.*']
+                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'sitemap.xml', 'views/{,*/}*.html', 'variants/{,*/}*.html', 'images/{,*/}*.{webp}', 'styles/fonts/{,*/}*.*']
                 }, {
                     expand: true,
                     cwd: '.tmp/images',
@@ -347,12 +349,12 @@ module.exports = function(grunt) {
         },
         //Comment out Karma until it's actually in use.
         // Test settings
-             karma: {
-               unit: {
-                 configFile: 'test/karma.conf.js',
-                 singleRun: true
-               }
-             }
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js',
+                singleRun: true
+            }
+        }
     });
     grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
         if(target === 'dist') {
@@ -363,7 +365,7 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['clean:server', 'concurrent:test', 'autoprefixer', 'connect:test', 'karma']);
     grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngAnnotate', 'copy:dist', 'cdnify', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
     grunt.registerTask('default', ['newer:jshint', 'test', 'build']);
-    grunt.registerTask('heroku', function (target) {
+    grunt.registerTask('heroku', function(target) {
         // use the target to do whatever, for example:
         grunt.task.run('build:' + target);
     });
