@@ -57,7 +57,7 @@ angular.module('angularApp', [
         }).when('/login/', {
             redirectTo: 'https://beta.writeon.io/login'
         }).otherwise({
-            redirectTo: '/404'
+            templateUrl: 'views/404.html'
         });
 		
 		// Angulartics full path tracking

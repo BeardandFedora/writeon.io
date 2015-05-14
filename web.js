@@ -1,5 +1,5 @@
 require('nodetime');
-//require('newrelic');
+require('newrelic');
 var gzippo = require('gzippo');
 var express = require('express');
 var morgan = require('morgan');
@@ -8,7 +8,7 @@ var app = express();
 
 /* this is used to force SSL - required for security */
 app.use(function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] != 'http') {
+    if (req.headers['x-forwarded-proto'] != 'https') {
         res.redirect('https://' + req.headers.host + req.path);
     }
     else {
@@ -30,6 +30,8 @@ app.use(serveStatic(__dirname + '/dist'));
 /* ******* The Variant Landing Pages ******* */
 // For each new page to launch, you must configure it 
 // below with a new app.get(...)
+// NOTE: These will not work using grunt serve, only by
+// starting a Node process
 // 
 app.set('variants', __dirname + '/dist/variants');
 app.get('/for/travel-writers', function(req, res, next) {

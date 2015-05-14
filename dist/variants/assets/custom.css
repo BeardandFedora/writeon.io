@@ -1,0 +1,14 @@
+.nav-1 .logo {
+  margin-top: 25px;
+  max-height: 50px;
+}
+.nav-1.shrink .logo {
+  margin-top: 15px;
+}
+.nav-1 .navbar {
+	background-image: linear-gradient(to bottom,#fff 0,rgba(255,255,255,.9)100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#E6FFFFFF', GradientType=0);
+	box-shadow: 0 1px 5px rgba(0,0,0,.075);
+	border-color: transparent;
+}
