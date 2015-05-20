@@ -41,7 +41,7 @@ app.get('/for/ebook-authors', function(req, res, next) {
     res.sendFile('ebook-authors.html', { root: __dirname + "/dist/variants"});
 });
 
-
+app.use(require('prerender-node').set('prerenderToken', 'xtC6Lsoww71XHb2J86uu'));
 
 /* ******* The Angular Ap Router ******* */
 // Leave this alone if you value your 
